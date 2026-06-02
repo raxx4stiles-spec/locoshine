@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wheel Air Freshener</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<section class="product-page">
+    <header class="navbar">
+
+        <div class="logo">
+        LOCO<span>SHINE</span>
+        </div>
+        
+        <a href="index.html" style="color:white;">
+        Home
+        </a>
+        
+        </header>
+
+<div class="product-image">
+
+<img id="mainImage" src="photos/wheel.jpg">
+
+</div>
+
+<div class="thumbnail-row">
+
+<img src="photos/wheel.jpg" onclick="changeImage(this)">
+
+<img src="photos/wheel1.jpg" onclick="changeImage(this)">
+
+</div>
+
+<div class="product-info">
+
+<h1>Wheel Air Freshener</h1>
+
+<h2>₹149</h2>
+
+<p>
+
+Premium Hot wheel edition air freshener with long lasting fragrance.
+
+</p>
+
+<a href="https://wa.me/917592838256?text=Hi%20Locoshine%20I%20want%20to%20order%20Red%20Air%20Freshener" target="_blank">
+
+<button class="buy-btn">
+
+Buy On WhatsApp
+
+</button>
+
+</a>
+
+<a href="air-freshener.html">
+
+<button class="back-btn">
+
+Back
+
+</button>
+
+</a>
+
+</div>
+
+</section>
+
+<script>
+
+function changeImage(element){
+
+document.getElementById("mainImage").src = element.src;
+
+}
+
+</script>
+
+</body>
+</html>
