@@ -1,125 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Car Perfume | Locoshine</title>
+<title>Luxury Car Perfume</title>
 
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
 
 <style>
 
-.perfume-page{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:120px 20px;
-background:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.9)),
-url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600&auto=format&fit=crop');
-background-size:cover;
-background-position:center;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-.perfume-box{
-max-width:650px;
-background:rgba(24,24,24,0.9);
-padding:50px 35px;
-border-radius:30px;
-text-align:center;
-backdrop-filter:blur(10px);
+body{
+    height:100vh;
+    overflow:hidden;
+    background:#050505;
+    font-family:'Orbitron',sans-serif;
+    position:relative;
 }
 
-.perfume-box h1{
-font-size:52px;
-margin-bottom:20px;
+/* VIDEO */
+
+video{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
-.perfume-box p{
-color:#d4d4d4;
-line-height:1.9;
-margin-bottom:35px;
+/* DARK SILVER OVERLAY */
+
+.overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+    to top,
+    rgba(0,0,0,0.95),
+    rgba(20,20,20,0.5),
+    rgba(0,0,0,0.85)
+    );
 }
 
-.perfume-tag{
-display:inline-block;
-padding:10px 20px;
-background:#ff3c00;
-border-radius:50px;
-font-size:13px;
-font-weight:600;
-margin-bottom:25px;
+/* SILVER LIGHT */
+
+.glow{
+    position:absolute;
+    width:320px;
+    height:320px;
+
+    background:radial-gradient(circle,#c0c0c0,#ffffff10);
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    top:-120px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    opacity:0.35;
+
+    animation:pulse 4s infinite;
 }
 
-.home-btn{
-padding:15px 35px;
-border:none;
-border-radius:50px;
-background:#ff3c00;
-color:white;
-font-weight:600;
-font-size:15px;
-cursor:pointer;
+/* CONTENT */
+
+.content{
+
+    position:absolute;
+    width:100%;
+    top:50%;
+    transform:translateY(-50%);
+    text-align:center;
+    z-index:20;
+    padding:20px;
+
 }
 
-@media(max-width:768px){
+/* SMALL TEXT */
 
-.perfume-box h1{
-font-size:38px;
+.small{
+    color:#bbb;
+    letter-spacing:6px;
+    font-size:11px;
+    margin-bottom:20px;
+    opacity:0;
+    animation:fadeUp 1s forwards;
+    animation-delay:1s;
 }
 
+/* MAIN TITLE */
+
+h1{
+    color:white;
+    font-size:42px;
+    line-height:1.15;
+    text-transform:uppercase;
+    font-weight:900;
+    opacity:0;
+    transform:translateY(60px);
+    animation:titleReveal 1.6s forwards;
+    animation-delay:1.5s;
+}
+
+/* SILVER TEXT */
+
+.silver{
+    color:#d9d9d9;
+    text-shadow:
+    0 0 10px rgba(220,220,220,0.6),
+    0 0 30px rgba(255,255,255,0.3),
+    0 0 60px rgba(200,200,200,0.2);
+}
+
+/* DESC */
+
+.desc{
+    max-width:320px;
+    margin:22px auto;
+    color:#ddd;
+    line-height:1.7;
+    font-size:14px;
+    opacity:0;
+    animation:fadeUp 1s forwards;
+    animation-delay:2.3s;
+}
+
+/* BUTTON */
+
+.btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:14px 32px;
+    border-radius:100px;
+
+    background:linear-gradient(
+    45deg,
+    #e6e6e6,
+    #bfbfbf
+    );
+
+    color:black;
+    font-size:13px;
+    font-weight:bold;
+    letter-spacing:1px;
+
+    opacity:0;
+
+    animation:
+    fadeUp 1s forwards,
+    glow 2s infinite alternate;
+
+    animation-delay:3s;
+
+}
+
+/* PARTICLES */
+
+.particle{
+    position:absolute;
+    width:4px;
+    height:4px;
+    background:#d9d9d9;
+    border-radius:50%;
+    opacity:0.6;
+    animation:particles linear infinite;
+}
+
+/* ANIMATIONS */
+
+@keyframes titleReveal{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes pulse{
+    0%{
+        transform:translateX(-50%) scale(1);
+    }
+    50%{
+        transform:translateX(-50%) scale(1.1);
+    }
+    100%{
+        transform:translateX(-50%) scale(1);
+    }
+}
+
+@keyframes glow{
+    from{
+        box-shadow:
+        0 0 10px rgba(200,200,200,0.4);
+    }
+    to{
+        box-shadow:
+        0 0 30px rgba(255,255,255,0.8),
+        0 0 60px rgba(200,200,200,0.5);
+    }
+}
+
+@keyframes particles{
+    from{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+    20%{
+        opacity:1;
+    }
+    to{
+        transform:translateY(-100px);
+        opacity:0;
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+    h1{
+        font-size:34px;
+    }
 }
 
 </style>
-
 </head>
 
 <body>
 
-<header class="navbar">
+<!-- VIDEO -->
 
-<div class="logo">
-LOCO<span>SHINE</span>
+<video autoplay muted loop playsinline>
+    <source src="drift.mp4" type="video/mp4">
+</video>
+
+<!-- OVERLAY -->
+
+<div class="overlay"></div>
+
+<!-- SILVER GLOW -->
+
+<div class="glow"></div>
+
+<!-- PARTICLES -->
+
+<div class="particle" style="left:10%; animation-duration:6s;"></div>
+<div class="particle" style="left:25%; animation-duration:8s;"></div>
+<div class="particle" style="left:40%; animation-duration:5s;"></div>
+<div class="particle" style="left:60%; animation-duration:9s;"></div>
+<div class="particle" style="left:80%; animation-duration:7s;"></div>
+
+<!-- CONTENT -->
+
+<div class="content">
+
+    <div class="small">
+        PREMIUM AUTOMOTIVE FRAGRANCE
+    </div>
+
+    <h1>
+
+        CAR PERFUME <br>
+
+        <span class="silver">
+            COMING SOON
+        </span>
+
+    </h1>
+
+    <div class="desc">
+        Experience luxury fragrance crafted for premium interiors and unforgettable drives.
+    </div>
+
+    <div class="btn">
+        STAY TUNED
+    </div>
+
 </div>
-
-</header>
-
-<section class="perfume-page">
-
-<div class="perfume-box">
-
-<div class="perfume-tag">
-PREMIUM COLLECTION
-</div>
-
-<h1>
-Luxury Car Perfumes Coming Soon
-</h1>
-
-<p>
-Exclusive premium car perfumes with luxury fragrance and elegant bottle designs are arriving soon at Locoshine.
-</p>
-
-<a href="index.html">
-
-<button class="home-btn">
-Back To Home
-</button>
-
-</a>
-
-</div>
-
-</section>
 
 </body>
-
-</html>>
+</html>
