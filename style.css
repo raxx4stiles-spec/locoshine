@@ -308,18 +308,29 @@
   }
   
   .hero h1{
-  font-size:78px;
-  line-height:0.95;
-  letter-spacing:-2px;
-  margin-bottom:18px;
-  }
-  
-  .hero-text{
-  font-size:15px;
-  line-height:1.9;
-  color:#cfcfcf;
-  max-width:520px;
-  }
+   animation:titleReveal 1.5s ease forwards;
+   opacity:0;
+   transform:translateY(80px);
+   }
+   
+   .hero-text{
+   animation:fadeText 2s ease forwards;
+   animation-delay:.5s;
+   opacity:0;
+   }
+   
+   @keyframes titleReveal{
+   to{
+   opacity:1;
+   transform:translateY(0);
+   }
+   }
+   
+   @keyframes fadeText{
+   to{
+   opacity:1;
+   }
+   }
   
   /* =========================
      PRODUCTS
@@ -330,9 +341,10 @@
   }
   
   .section-title{
-  text-align:center;
-  margin-bottom:42px;
-  }
+   padding-top:60px;
+   text-align:center;
+   margin-bottom:42px;
+   }
   
   .section-title h2{
   font-size:42px;
